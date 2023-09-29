@@ -8,6 +8,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import { getMovies } from "../../data/movieClient";
 import styled from "@emotion/styled";
+import { Skeleton } from "@mui/material";
 
 const Banner = () => {
     const [upcomingMovies, setUpcomingMovies] = useState([]),
@@ -51,7 +52,7 @@ const Banner = () => {
                 className="mySwiper"
             >
                 {
-                    upcomingMovies.map((movie) => {
+                    upcomingMovies ? upcomingMovies.map((movie) => {
                         return <SwiperSlide key={movie.id}>
                             <MovieContainer color="#fff">
                                 <MovieTitle>{movie.title}</MovieTitle>
@@ -60,7 +61,8 @@ const Banner = () => {
                             <div className="overlay"></div>
                             <img className="swiper-image" src={fullImgPath + movie.backdrop_path} alt={movie.title} style={{width: "100%", height: "80vh"}}/>
                         </SwiperSlide>
-                    })
+                    }) :
+                    <Skeleton animation="wave" width='100%' height={400} ></Skeleton>
                 }
             </Swiper>
     );

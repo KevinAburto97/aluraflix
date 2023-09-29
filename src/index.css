@@ -16,7 +16,10 @@
   --font-prata: 'Prata', serif;
   --font-montserrat: 'Montserrat', sans-serif;
   --font-goudy: 'Sorts Mill Goudy', serif;
+  --font-young-serif: 'Young Serif', serif;
   --red-color: #DB202C;
+  --swiper-pagination-color: var(--red-color);
+  --swiper-navigation-color: var(--red-color);
 }
 
 body{
@@ -29,6 +32,7 @@ body{
   font-family: monospace !important;
   color: #f9f9f9 !important;
   display: block !important;
+  text-align: center !important;
 }
 
 .nav-style:hover{
@@ -77,6 +81,44 @@ body{
   cursor: pointer;
   opacity: 1;
 }
+
+.chip-genre{
+  background-color: #DB202C !important;
+  color: #fff !important;
+  cursor: pointer;
+}
+
+.chip-genre.active,
+.chip-genre:hover{
+  background-color: #4a5165 !important;
+  border: none !important;
+  outline: none !important;
+}
+
+@keyframes floaty {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(15px);
+  }
+}
+
+@keyframes shadow {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(.85, .85);
+  }
+}
+
+@media screen and (min-width: 460px) {
+  .movieContent {
+    margin: auto;
+  }
+}
+
 
 video::-webkit-media-controls {
   display: none;
