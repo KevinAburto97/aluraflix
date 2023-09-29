@@ -6,7 +6,7 @@ import Watch from "../pages/Watch";
 import Peliculas from "../pages/Peliculas";
 const MyRoutes = () => {
     return(
-        <Router>
+        <Router basename="/">
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/watch/:id" element={<Watch/>}/>
